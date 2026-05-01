@@ -1,10 +1,12 @@
 const skills = [
   { name: 'Java', icon: '☕', color: '#f89820', bg: '#1a0f00', glow: 'rgba(248,152,32,0.4)' },
-  { name: 'Python', icon: '🐍', color: '#4b8bbe', bg: '#001020', glow: 'rgba(75,139,190,0.4)' },
+  { name: 'HTML5', icon: 'H5', color: '#e34f26', bg: '#1a0800', glow: 'rgba(227,79,38,0.4)' },
+  { name: 'CSS3', icon: 'C3', color: '#1572b6', bg: '#000a1a', glow: 'rgba(21,114,182,0.4)' },
   { name: 'JavaScript', icon: 'JS', color: '#f7df1e', bg: '#1a1600', glow: 'rgba(247,223,30,0.4)' },
-  { name: 'C++', icon: 'C++', color: '#00599c', bg: '#000d1a', glow: 'rgba(0,89,156,0.4)' },
+  { name: 'Angular', icon: 'A', color: '#dd0031', bg: '#1a0005', glow: 'rgba(221,0,49,0.4)' },
   { name: 'React', icon: '⚛', color: '#61dafb', bg: '#001824', glow: 'rgba(97,218,251,0.4)' },
   { name: 'Bootstrap', icon: 'B', color: '#7952b3', bg: '#10071a', glow: 'rgba(121,82,179,0.4)' },
+  { name: 'C++', icon: 'C++', color: '#00599c', bg: '#000d1a', glow: 'rgba(0,89,156,0.4)' },
   { name: 'Node.js', icon: 'Node', color: '#339933', bg: '#001a00', glow: 'rgba(51,153,51,0.4)' },
   { name: 'MongoDB', icon: '🍃', color: '#4db33d', bg: '#001500', glow: 'rgba(77,179,61,0.4)' },
   { name: 'Git', icon: 'Git', color: '#f05032', bg: '#1a0500', glow: 'rgba(240,80,50,0.4)' },
@@ -12,6 +14,7 @@ const skills = [
   { name: 'OOP', icon: '{}', color: '#7c3aed', bg: '#0a0014', glow: 'rgba(124,58,237,0.4)' },
   { name: 'DBMS', icon: '🗄', color: '#34d399', bg: '#001610', glow: 'rgba(52,211,153,0.4)' },
 ];
+
 
 function Gem({ name, icon, color, bg, glow, delay }: { name: string; icon: string; color: string; bg: string; glow: string; delay: number }) {
   const clipPath = 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)';

@@ -39,7 +39,9 @@ const activities = [
   { label: "Apithon", detail: "Participant", year: "2024" },
   { label: "Appreciation Award", detail: "Recipient", year: "2024" },
   { label: "Persona", detail: "Participant", year: "2026" },
+  { label: "Symposium Codez", detail: "2nd Prize Winner", year: "2026" },
 ];
+
 
 export function ProjectsSection() {
   return (
@@ -114,10 +116,10 @@ export function ProjectsSection() {
           <div className="flex flex-col items-center mb-16">
             <div className="flex items-center gap-4 w-full max-w-4xl mb-6">
               <div className="section-divider flex-1 opacity-50" />
-               <h3 className="text-2xl md:text-4xl font-black text-white text-center">Activities & <span className="text-gradient-primary">Recognition</span></h3>
+              <h3 className="text-2xl md:text-4xl font-black text-white text-center">Activities & <span className="text-gradient-primary">Recognition</span></h3>
               <div className="section-divider flex-1 opacity-50" />
             </div>
-           
+
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -125,7 +127,7 @@ export function ProjectsSection() {
               <div key={a.label} className="group relative">
                 {/* Glowing Background Overlay */}
                 <div className="absolute -inset-[1px] bg-gradient-to-br from-purple-600/20 via-blue-500/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-[2px]" />
-                
+
                 <div className="relative h-full bg-[#0c0c14]/40 backdrop-blur-xl border border-white/5 rounded-3xl p-6 transition-all duration-500 group-hover:bg-[#0c0c14]/70 group-hover:-translate-y-1 hover:shadow-2xl">
                   <div className="flex items-start gap-5">
                     <div className="w-14 h-14 rounded-2xl bg-purple-500/5 border border-purple-500/10 flex items-center justify-center shrink-0 group-hover:bg-purple-500/10 group-hover:border-purple-500/30 transition-all duration-300">
@@ -135,7 +137,7 @@ export function ProjectsSection() {
                         <Calendar className="w-7 h-7 text-blue-400 group-hover:text-white transition-colors" />
                       )}
                     </div>
-                    
+
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-2 mb-2">
                         <span className="text-[9px] font-black text-purple-400 uppercase tracking-widest bg-purple-500/5 px-2 py-0.5 rounded border border-purple-500/10">

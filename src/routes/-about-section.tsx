@@ -2,13 +2,24 @@ import { SkillGems } from '../components/SkillGems';
 import { Award, Calendar, CheckCircle2, GraduationCap } from 'lucide-react';
 
 const certifications = [
-  { title: "NPTEL Design Thinking", year: "2023", issuer: "NPTEL", category: "Design" },
-  { title: "Python ", year: "2023", issuer: "Infosys Springboard", category: "Python" },
-  { title: "NPTEL Java Programming", year: "2024", issuer: "NPTEL", category: "Programming" },
-  { title: "NPTEL Introduction to IoT", year: "2025", issuer: "NPTEL", category: "IoT" },
-  { title: "NASSCOM Digital 101", year: "2026", issuer: "NASSCOM", category: "Digital" },
-  { title: "NASSCOM Data Preprocessing", year: "2026", issuer: "NASSCOM", category: "Data Science" },
+  { title: "Design Thinking", year: "2023", issuer: "NPTEL", category: "Design", link: "https://drive.google.com/file/d/1VxWeAbOsl92Hiy3UywERosuoXnTw9sf8/view?usp=drive_link" },
+  { title: "Introduction to HTML5", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1JKBCUuvleP4vR_50VFz64ArtKvhNyIiZ/view?usp=drive_link" },
+  { title: "CSS3 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1DBxZEp8qmCkXWq6jjM0ZCe_Tc0kXWHVV/view?usp=drive_link" },
+  { title: "JavaScript Essentials", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1Ed_yykydublixl-HnBWeHEXthDGQP9vj/view?usp=drive_link" },
+  { title: "Bootstrap 5 Responsive Design", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/16cpNJLMoZiVhzyx-Ys8_lOWR1F5Ghig-/view?usp=drive_link" },
+  { title: "Angular Framework Development", year: "2026", issuer: "Infosys Springboard", category: "Framework", link: "https://drive.google.com/file/d/15v4Oo4dPWxkiySkJy91GN6E14baNlrZx/view?usp=drive_link" },
+  { title: "TypeScript Mastery", year: "2026", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1awkZEoUAt1Y4ITZBONawITbNUfXGaV3X/view?usp=drive_link" },
+
+  { title: "Java Programming", year: "2024", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1cYZhlmgPUIeZrLCq-cvgjV5I4HG7MJd9/view?usp=drive_link" },
+  { title: "Introduction to IoT", year: "2025", issuer: "Infosys Springboard", category: "IoT", link: "https://drive.google.com/file/d/19Otd0DDeIJTnNfLqCzy_RdM6KEbPqVWm/view?usp=drive_link" },
+  { title: "NASSCOM Digital 101", year: "2026", issuer: "NASSCOM", category: "Digital", link: "https://drive.google.com/file/d/1MJQ_kB-8_Us-Xs54tMgpM5W2wcprYWW0/view?usp=drive_link" },
+  { title: "NASSCOM Data Preprocessing", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/18MP3YBc9JRThMXeq4as9pRL0LzkTjlUS/view?usp=drive_link" },
+  { title: "Acquiring Data", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/1rPy-tamLREVlVPbdtXNTnDPhYd17TdXZ/view?usp=drive_link" },
 ];
+
+
+
+
 
 export function AboutSection() {
   return (
@@ -153,7 +164,13 @@ export function AboutSection() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((c) => (
-                <div key={c.title} className="group relative">
+                <a 
+                  key={c.title} 
+                  href={c.link} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="group relative cursor-pointer block"
+                >
                   <div className="absolute -inset-[1px] bg-gradient-to-br from-purple-600/20 via-blue-500/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-[2px]" />
                   <div className="relative h-full bg-[#0c0c14]/60 backdrop-blur-md border border-white/5 rounded-2xl p-5 transition-all duration-500 group-hover:bg-[#0c0c14]/90 group-hover:-translate-y-1 shadow-xl">
                     <div className="flex items-start gap-4">
@@ -170,10 +187,14 @@ export function AboutSection() {
                     </div>
                     <div className="mt-4 flex items-center justify-between pt-4 border-t border-white/5">
                       <span className="text-[10px] font-mono text-zinc-600 font-bold tracking-tighter uppercase">Issue Year</span>
-                      <span className="text-[10px] font-mono text-purple-400/80 font-bold">{c.year}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono text-purple-400/80 font-bold">{c.year}</span>
+                        <div className="w-1 h-1 rounded-full bg-zinc-700" />
+                        <span className="text-[9px] font-bold text-purple-500/50 uppercase group-hover:text-purple-400 transition-colors">View →</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
