@@ -56,7 +56,7 @@ function Index() {
 
               <div className="mt-14 flex flex-wrap gap-x-10 gap-y-6">
                 {[
-                  { val: '8.35', label: 'CGPA' },
+                  { val: '8.34', label: 'CGPA' },
                   { val: '3+', label: 'Projects' },
                   { val: '12+', label: 'Certifications' },
                   { val: '2027', label: 'Graduating' },
