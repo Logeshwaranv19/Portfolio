@@ -14,6 +14,14 @@ export function Header() {
               {label}
             </a>
           ))}
+          <a 
+            href="https://drive.google.com/file/d/1RpPuAqj3Z4CNWKtnVj5XlG5MHLuL2JDb/view?usp=drive_link" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-sm font-semibold text-purple-400 hover:text-white px-4 py-2 rounded-lg hover:bg-purple-500/10 transition-all border border-purple-500/20 ml-2"
+          >
+            Resume
+          </a>
         </nav>
       </div>
     </header>
