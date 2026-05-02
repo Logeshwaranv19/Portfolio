@@ -100,7 +100,7 @@ export function AboutSection() {
                     year: "2023 — 2027",
                     title: "B.Tech, Information Technology",
                     place: "Sona College of Technology",
-                    detail: "CGPA: 8.35",
+                    detail: "CGPA: 8.34",
                     badge: "Current",
                   }
                 ].map((t, idx) => (
