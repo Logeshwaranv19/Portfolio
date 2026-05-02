@@ -52,14 +52,6 @@ function Index() {
                 <a href="#contact" className="px-7 py-3.5 rounded-xl glass border-primary-glow text-white font-semibold hover:bg-white/10 transition-all text-sm font-secondary">
                   Let's Connect
                 </a>
-                <a 
-                  href="https://drive.google.com/file/d/1RpPuAqj3Z4CNWKtnVj5XlG5MHLuL2JDb/view?usp=drive_link" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="px-7 py-3.5 rounded-xl border border-white/10 text-zinc-400 font-semibold hover:text-white hover:border-white/30 transition-all text-sm font-secondary"
-                >
-                  Resume
-                </a>
               </div>
 
               <div className="mt-14 flex flex-wrap gap-x-10 gap-y-6">
