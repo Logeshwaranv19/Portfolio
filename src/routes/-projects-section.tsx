@@ -1,4 +1,4 @@
-import { Award, Calendar, Github } from 'lucide-react';
+import { Award, Calendar, Github, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
@@ -8,7 +8,8 @@ const projects = [
     description:
       "OffGridLink is an innovative offline-first quiz management and distribution system designed for educational environments without reliable internet connectivity. Teachers can create, manage, and distribute quizzes to students via peer-to-peer networking over local Wi-Fi networks. Students submit their responses which are automatically scored and synced when connectivity is available.",
     tech: ["#PeerJS", "#WebRTC", "#WebTorrent", "#PouchDB", "#CouchDB"],
-    link: "https://github.com/Logeshwaranv19/finalquizoffline",
+    github: "https://github.com/Logeshwaranv19/finalquizoffline",
+    live: "https://offgridlink.netlify.app/",
     image: "/images/OffgridLink.png",
   },
   {
@@ -18,7 +19,8 @@ const projects = [
     description:
       "Built a full-stack laundry booking platform with JWT authentication, pickup scheduling, order tracking, fabric-based pricing, loyalty rewards, subscription plans, and complaint management with photo uploads.",
     tech: ["#MongoDB", "#Express", "#React", "#Node.js", "#JWT", "#MERN"],
-    link: "https://github.com/Logeshwaranv19/The-Laundry-Dry-Cleaning-Service-System",
+    github: "https://github.com/Logeshwaranv19/The-Laundry-Dry-Cleaning-Service-System",
+    live: "https://the-laundry-dry-cleaning-service-sy.vercel.app/login",
     image: "/images/Laundary.png",
   },
   {
@@ -28,7 +30,8 @@ const projects = [
     description:
       "An offline-first Peer-to-Peer (P2P) file sharing application designed to work without internet access. It leverages PWA technologies and Electron to run on browsers and desktops, utilizing local PouchDB storage and WebRTC for direct transfers.",
     tech: ["#PWA", "#Electron", "#WebRTC", "#PouchDB", "#CouchDB", "#TailwindCSS"],
-    link: "https://github.com/Logeshwaranv19/OffgridShare",
+    github: "https://github.com/Logeshwaranv19/OffgridShare",
+    live: "https://offlineshare.vercel.app/",
     image: "/images/OFFLINESHARE.png",
   }
 ];
@@ -71,15 +74,27 @@ export function ProjectsSection() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
 
-                {/* GitHub Overlay */}
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="absolute top-4 right-4 w-11 h-11 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:scale-110 transition-all shadow-glow"
-                >
-                  <Github size={22} />
-                </a>
+                {/* Project Links */}
+                <div className="absolute top-4 right-4 flex gap-2">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:scale-110 transition-all shadow-glow"
+                    title="View Source on GitHub"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-full bg-purple-600/90 backdrop-blur-md flex items-center justify-center text-white border border-white/20 hover:scale-110 transition-all shadow-glow"
+                    title="View Live Site"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                </div>
               </div>
 
               {/* Content */}
