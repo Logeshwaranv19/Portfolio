@@ -5,19 +5,52 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 function getEnvVar(key: string): string {
-  if (process.env[key]) {
-    return process.env[key]!;
-  }
+  // 1. Try process.env
+  if (process.env[key]) return process.env[key]!;
+  if (process.env[`VITE_${key}`]) return process.env[`VITE_${key}`]!;
+
+  // 2. Try import.meta.env (Vite)
   try {
-    const envPath = path.resolve(process.cwd(), '.env');
-    if (fs.existsSync(envPath)) {
-      const content = fs.readFileSync(envPath, 'utf-8');
-      for (const line of content.split('\n')) {
-        const trimmed = line.trim();
-        if (trimmed && !trimmed.startsWith('#')) {
-          const [k, ...v] = trimmed.split('=');
-          if (k.trim() === key) {
-            return v.join('=').trim().replace(/^["']|["']$/g, '');
+    const metaEnv = (import.meta as any).env;
+    if (metaEnv) {
+      if (metaEnv[key]) return metaEnv[key];
+      if (metaEnv[`VITE_${key}`]) return metaEnv[`VITE_${key}`];
+    }
+  } catch {}
+
+  // 3. Search candidate locations for .env file
+  try {
+    const cwd = process.cwd();
+    const candidates = [
+      path.resolve(cwd, '.env'),
+      path.resolve(cwd, '../.env'),
+      path.resolve(cwd, '../../.env'),
+    ];
+    
+    // @ts-ignore
+    if (typeof __dirname !== 'undefined') {
+      // @ts-ignore
+      candidates.push(path.resolve(__dirname, '.env'));
+      // @ts-ignore
+      candidates.push(path.resolve(__dirname, '../.env'));
+      // @ts-ignore
+      candidates.push(path.resolve(__dirname, '../../.env'));
+      // @ts-ignore
+      candidates.push(path.resolve(__dirname, '../../../.env'));
+    }
+
+    for (const envPath of candidates) {
+      if (fs.existsSync(envPath)) {
+        const content = fs.readFileSync(envPath, 'utf-8');
+        for (const line of content.split('\n')) {
+          const trimmed = line.trim();
+          if (trimmed && !trimmed.startsWith('#')) {
+            const [k, ...v] = trimmed.split('=');
+            const trimmedKey = k.trim();
+            if (trimmedKey === key || trimmedKey === `VITE_${key}`) {
+              const val = v.join('=').trim().replace(/^["']|["']$/g, '');
+              if (val) return val;
+            }
           }
         }
       }
