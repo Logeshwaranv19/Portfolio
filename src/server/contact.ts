@@ -5,17 +5,22 @@ import nodemailer from 'nodemailer';
 export const sendEmail = createServerFn({ method: 'POST' })
   .inputValidator((data: { name: string; email: string; message: string }) => data)
   .handler(async ({ data }) => {
+    const user = process.env.GMAIL_USER || 'logeshwaranv19@gmail.com';
+    // Remove all spaces from the App Password if present
+    const rawPass = process.env.GMAIL_APP_PASS || '';
+    const pass = rawPass.replace(/\s+/g, '');
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'logeshwaranv19@gmail.com',
-        pass: 'ndjh gpte bxir oulq',
+        user,
+        pass,
       },
     });
 
     const mailOptions = {
-      from: 'logeshwaranv19@gmail.com',
-      to: 'logeshwaranv19@gmail.com',
+      from: user,
+      to: user,
       subject: `Portfolio Contact: ${data.name}`,
       text: `
         You have a new message from your portfolio contact form:
@@ -32,6 +37,13 @@ export const sendEmail = createServerFn({ method: 'POST' })
       return { success: true };
     } catch (error: any) {
       console.error('Error sending email:', error);
-      return { success: false, error: error.message || 'Failed to send email' };
+      let userFriendlyError = 'Failed to send message. Please check server mail configuration.';
+      if (error?.message?.includes('535') || error?.message?.includes('BadCredentials')) {
+        userFriendlyError = 'Invalid Gmail App Password. Please update your 16-character App Password in the .env file.';
+      } else if (error?.message) {
+        userFriendlyError = error.message;
+      }
+      return { success: false, error: userFriendlyError };
     }
   });
+
