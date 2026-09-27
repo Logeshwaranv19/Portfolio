@@ -12,7 +12,7 @@ function StarCanvas() {
     let animId: number;
     let isVisible = true;
     const isMobile = window.innerWidth < 768;
-    const starCount = isMobile ? 60 : 120;
+    const starCount = isMobile ? 150 : 350;
     const stars: { x: number; y: number; r: number; vx: number; vy: number; opacity: number; twinkleSpeed: number; twinklePhase: number }[] = [];
 
     const resize = () => {
@@ -33,36 +33,34 @@ function StarCanvas() {
     };
     document.addEventListener('visibilitychange', handleVisibility);
 
-    // Generate lightweight stars
+    // Generate vibrant hero star particles
     for (let i = 0; i < starCount; i++) {
+      const isLarge = Math.random() < 0.15;
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 1.5 + 0.3,
+        r: isLarge ? Math.random() * 1.6 + 1.2 : Math.random() * 1.1 + 0.4,
         vx: (Math.random() - 0.5) * 0.2,
         vy: (Math.random() - 0.5) * 0.2,
-        opacity: Math.random() * 0.6 + 0.3,
+        opacity: Math.random() * 0.6 + 0.4,
         twinkleSpeed: Math.random() * 0.03 + 0.01,
         twinklePhase: Math.random() * Math.PI * 2,
       });
     }
 
-    let lastTime = performance.now();
-    const draw = (now: number) => {
+    const draw = () => {
       animId = requestAnimationFrame(draw);
 
       if (!isVisible) return;
-      if (now - lastTime < 24) return;
-      lastTime = now;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < stars.length; i++) {
         const s = stars[i];
         s.twinklePhase += s.twinkleSpeed;
-        const alpha = s.opacity * (0.5 + 0.5 * Math.sin(s.twinklePhase));
+        const alpha = s.opacity * (0.4 + 0.6 * Math.sin(s.twinklePhase));
 
-        ctx.fillStyle = `rgba(230,215,255,${alpha.toFixed(2)})`;
+        ctx.fillStyle = `rgba(235,225,255,${alpha.toFixed(2)})`;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
@@ -76,7 +74,7 @@ function StarCanvas() {
       }
     };
 
-    animId = requestAnimationFrame(draw);
+    draw();
 
     return () => {
       cancelAnimationFrame(animId);
