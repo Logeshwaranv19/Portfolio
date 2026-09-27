@@ -40,7 +40,7 @@ export function AboutSection() {
         {/* Top Section: Photo + Bio Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-16 sm:mb-24">
           {/* Photo Card Column */}
-          <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
+          <div className="lg:col-span-5 flex justify-center w-full">
             <div className="relative group max-w-sm sm:max-w-md w-full">
               {/* Glow Backdrops */}
               <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-75 group-hover:opacity-100 transition duration-700 group-hover:duration-300" />
@@ -92,13 +92,13 @@ export function AboutSection() {
           </div>
 
           {/* Bio Text Column */}
-          <div className="lg:col-span-7 flex flex-col items-start order-1 lg:order-2">
+          <div className="lg:col-span-7 flex flex-col items-start w-full">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono tracking-widest uppercase mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               Background &amp; Profile
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
               Passionate about <span className="text-gradient-primary">software development.</span>
             </h2>
 
@@ -120,7 +120,7 @@ export function AboutSection() {
             {/* Highlight Badges */}
             <div className="mt-8 flex flex-wrap gap-2.5">
               {['Full-Stack Development', 'Java & Spring', 'React & Web Apps', 'REST APIs & SQL', 'Problem Solving'].map((tag) => (
-                <span key={tag} className="px-3.5 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold">
+                <span key={tag} className="px-3.5 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold hover:bg-purple-500/20 transition-colors">
                   ⚡ {tag}
                 </span>
               ))}
