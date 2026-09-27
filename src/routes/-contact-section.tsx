@@ -26,8 +26,11 @@ export function ContactSection() {
       message: formData.get('message') as string,
     };
 
+    let sent = false;
+
+    // 1. Try client-side EmailJS with a 5s timeout
     try {
-      const res = await emailjs.send(
+      const emailjsPromise = emailjs.send(
         'service_hveptng',
         'template_fleygfc',
         {
@@ -40,28 +43,39 @@ export function ContactSection() {
         },
         'dolJchDKVTn_oqmkB'
       );
-      if (res.status === 200) {
-        setSubmitStatus({ type: 'success', msg: "Message sent! I'll get back to you soon." });
-        formElement.reset();
-        return;
+
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('EmailJS timeout')), 5000)
+      );
+
+      const res: any = await Promise.race([emailjsPromise, timeoutPromise]);
+      if (res?.status === 200) {
+        sent = true;
       }
     } catch {
-      // Fallback to server function if client-side send fails
+      // Fallback to server function if client-side send fails or times out
     }
 
-    try {
-      const res = await sendEmail({ data });
-      if (res.success) {
-        setSubmitStatus({ type: 'success', msg: "Message sent! I'll get back to you soon." });
-        formElement.reset();
-      } else {
-        setSubmitStatus({ type: 'error', msg: res.error || 'Failed to send message.' });
+    // 2. If client-side failed, use server endpoint fallback
+    if (!sent) {
+      try {
+        const res = await sendEmail({ data });
+        if (res.success) {
+          sent = true;
+        } else {
+          setSubmitStatus({ type: 'error', msg: res.error || 'Failed to send message.' });
+        }
+      } catch (err: any) {
+        setSubmitStatus({ type: 'error', msg: err?.message || 'Something went wrong. Please try again.' });
       }
-    } catch (err: any) {
-      setSubmitStatus({ type: 'error', msg: err?.message || 'Something went wrong. Please try again.' });
-    } finally {
-      setIsSubmitting(false);
     }
+
+    if (sent) {
+      setSubmitStatus({ type: 'success', msg: "Message sent! I'll get back to you soon." });
+      formElement.reset();
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
