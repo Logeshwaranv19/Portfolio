@@ -12,7 +12,7 @@ export function GlobalStarfield() {
     let animId: number;
     let isVisible = true;
     const isMobile = window.innerWidth < 768;
-    const starCount = isMobile ? 300 : 650;
+    const starCount = isMobile ? 800 : 1800;
     const stars: { x: number; y: number; r: number; vx: number; vy: number; opacity: number; phase: number; speed: number; color: string }[] = [];
 
     const resize = () => {
@@ -33,20 +33,27 @@ export function GlobalStarfield() {
     };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Generate vibrant, visible stars
+    const colors = [
+      '255, 255, 255',   // White
+      '216, 180, 254',   // Purple glow
+      '192, 132, 252',   // Deep Violet
+      '165, 243, 252',   // Cyan tint
+    ];
+
+    // Generate dense, vibrant starfield
     for (let i = 0; i < starCount; i++) {
-      const isLarge = Math.random() < 0.12;
-      const isPurple = Math.random() < 0.25;
+      const isLarge = Math.random() < 0.15;
+      const colorIndex = Math.floor(Math.random() * colors.length);
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: isLarge ? Math.random() * 1.6 + 1.2 : Math.random() * 1.1 + 0.4,
-        vx: (Math.random() - 0.5) * 0.15,
-        vy: (Math.random() - 0.5) * 0.15,
-        opacity: Math.random() * 0.6 + 0.4,
+        r: isLarge ? Math.random() * 1.8 + 1.2 : Math.random() * 1.0 + 0.3,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        opacity: Math.random() * 0.65 + 0.35,
         phase: Math.random() * Math.PI * 2,
-        speed: Math.random() * 0.03 + 0.01,
-        color: isPurple ? '216, 180, 254' : '255, 255, 255',
+        speed: Math.random() * 0.035 + 0.008,
+        color: colors[colorIndex],
       });
     }
 
@@ -60,7 +67,7 @@ export function GlobalStarfield() {
       for (let i = 0; i < stars.length; i++) {
         const s = stars[i];
         s.phase += s.speed;
-        const alpha = s.opacity * (0.4 + 0.6 * Math.sin(s.phase));
+        const alpha = s.opacity * (0.35 + 0.65 * Math.sin(s.phase));
 
         ctx.fillStyle = `rgba(${s.color}, ${alpha.toFixed(2)})`;
         ctx.beginPath();

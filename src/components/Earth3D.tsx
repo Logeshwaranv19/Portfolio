@@ -12,7 +12,7 @@ function StarCanvas() {
     let animId: number;
     let isVisible = true;
     const isMobile = window.innerWidth < 768;
-    const starCount = isMobile ? 150 : 350;
+    const starCount = isMobile ? 500 : 1000;
     const stars: { x: number; y: number; r: number; vx: number; vy: number; opacity: number; twinkleSpeed: number; twinklePhase: number }[] = [];
 
     const resize = () => {
@@ -39,11 +39,11 @@ function StarCanvas() {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: isLarge ? Math.random() * 1.6 + 1.2 : Math.random() * 1.1 + 0.4,
+        r: isLarge ? Math.random() * 1.8 + 1.2 : Math.random() * 1.0 + 0.3,
         vx: (Math.random() - 0.5) * 0.2,
         vy: (Math.random() - 0.5) * 0.2,
-        opacity: Math.random() * 0.6 + 0.4,
-        twinkleSpeed: Math.random() * 0.03 + 0.01,
+        opacity: Math.random() * 0.65 + 0.35,
+        twinkleSpeed: Math.random() * 0.035 + 0.01,
         twinklePhase: Math.random() * Math.PI * 2,
       });
     }
