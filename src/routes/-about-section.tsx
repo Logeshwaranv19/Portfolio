@@ -11,6 +11,7 @@ const certifications = [
   { title: "Data Science for Beginners", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/16jGOe2ZWyMlrUHbEOcXT70zXuALSRCPb/view?usp=sharing" },
   { title: "Design Thinking", year: "2023", issuer: "NPTEL", category: "Design", link: "https://drive.google.com/file/d/1Fj1c_etoemAXUp4MaUGHvBjZFGuKC7sk/view?usp=sharing" },
   { title: "Digital 101", year: "2026", issuer: "NASSCOM", category: "Digital", link: "https://drive.google.com/file/d/1obehWibBTZpDAC84gbZDUo1019NzaI9p/view?usp=sharing" },
+  { title: "Foundational Course on Applied ML & AI", year: "2026", issuer: "NASSCOM", category: "AI / ML", link: "https://drive.google.com/file/d/1zU_-jp1231TBenxdwqTOBUvRYgjAzYRL/view?usp=sharing" },
   { title: "HTML5 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/17y660_v0itQPun_nOIMrlB5Y-45E6k4l/view?usp=sharing" },
   { title: "Introduction to IoT", year: "2025", issuer: "Infosys Springboard", category: "IoT", link: "https://drive.google.com/file/d/1z2QvLcAHryEk3N62sMBb6bW_PzThqOXD/view?usp=sharing" },
   { title: "Java Programming", year: "2024", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1WW-6ImfYJA8gdNK2GsTy3qJAkH1qroAC/view?usp=sharing" },
@@ -22,6 +23,7 @@ const certifications = [
 ];
 
 const hackathonCertificates = [
+  { title: "Academic Excellence Award", year: "2026", issuer: "Academic Honor", category: "Award", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
   { title: "Tata Elxsi Hackathon", year: "2026", issuer: "Tata Elxsi", category: "Hackathon", link: "https://drive.google.com/file/d/1P5yHRflTy2d6Ck8mUOOxX5dSymUnVJij/view?usp=sharing" },
   { title: "Hackvega Hackathon", year: "2026", issuer: "Hackvega", category: "Hackathon", link: "https://drive.google.com/file/d/1n0rD5W4CQvp8PdMV8b5By8uqcrdPnlug/view?usp=sharing" },
 ];
@@ -160,18 +162,18 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Hackathon Certificates */}
+          {/* Honors & Hackathon Awards */}
           <div>
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
               <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-bold">
                 <Trophy className="w-4 h-4 text-amber-400" />
-                <span>Hackathon Certificates</span>
+                <span>Honors & Hackathon Awards</span>
               </div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {hackathonCertificates.map((h) => (
                 <a
                   key={h.title}

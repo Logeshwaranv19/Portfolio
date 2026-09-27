@@ -66,7 +66,7 @@ function Index() {
                 {[
                   { val: '8.34', label: 'CGPA' },
                   { val: '3+', label: 'Projects' },
-                  { val: '19+', label: 'Certifications' },
+                  { val: '21+', label: 'Certifications' },
                   { val: '2027', label: 'Graduating' },
                 ].map(({ val, label }) => (
                   <div key={label}>
