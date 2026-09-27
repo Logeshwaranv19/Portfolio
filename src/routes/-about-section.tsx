@@ -116,15 +116,6 @@ export function AboutSection() {
                 I am seeking opportunities to contribute my technical skills, collaborate with innovative teams, and grow as a software engineer while building impactful digital products.
               </p>
             </div>
-
-            {/* Highlight Badges */}
-            <div className="mt-8 flex flex-wrap gap-2.5">
-              {['Full-Stack Development', 'Java & Spring', 'React & Web Apps', 'REST APIs & SQL', 'Problem Solving'].map((tag) => (
-                <span key={tag} className="px-3.5 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold hover:bg-purple-500/20 transition-colors">
-                  ⚡ {tag}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
