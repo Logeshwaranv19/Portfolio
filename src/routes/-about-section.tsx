@@ -1,25 +1,30 @@
 import { SkillGems } from '../components/SkillGems';
-import { Award, GraduationCap } from 'lucide-react';
+import { Award, GraduationCap, Trophy, ExternalLink } from 'lucide-react';
 
 const certifications = [
-  { title: "Design Thinking", year: "2023", issuer: "NPTEL", category: "Design", link: "https://drive.google.com/file/d/1VxWeAbOsl92Hiy3UywERosuoXnTw9sf8/view?usp=drive_link" },
-  { title: "Introduction to HTML5", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1JKBCUuvleP4vR_50VFz64ArtKvhNyIiZ/view?usp=drive_link" },
-  { title: "CSS3 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1DBxZEp8qmCkXWq6jjM0ZCe_Tc0kXWHVV/view?usp=drive_link" },
-  { title: "JavaScript Essentials", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1Ed_yykydublixl-HnBWeHEXthDGQP9vj/view?usp=drive_link" },
-  { title: "Bootstrap 5 Responsive Design", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/16cpNJLMoZiVhzyx-Ys8_lOWR1F5Ghig-/view?usp=drive_link" },
-  { title: "Angular Framework Development", year: "2026", issuer: "Infosys Springboard", category: "Framework", link: "https://drive.google.com/file/d/15v4Oo4dPWxkiySkJy91GN6E14baNlrZx/view?usp=drive_link" },
-  { title: "TypeScript Mastery", year: "2026", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1awkZEoUAt1Y4ITZBONawITbNUfXGaV3X/view?usp=drive_link" },
-
-  { title: "Java Programming", year: "2024", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1cYZhlmgPUIeZrLCq-cvgjV5I4HG7MJd9/view?usp=drive_link" },
-  { title: "Introduction to IoT", year: "2025", issuer: "Infosys Springboard", category: "IoT", link: "https://drive.google.com/file/d/19Otd0DDeIJTnNfLqCzy_RdM6KEbPqVWm/view?usp=drive_link" },
-  { title: "NASSCOM Digital 101", year: "2026", issuer: "NASSCOM", category: "Digital", link: "https://drive.google.com/file/d/1MJQ_kB-8_Us-Xs54tMgpM5W2wcprYWW0/view?usp=drive_link" },
-  { title: "NASSCOM Data Preprocessing", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/18MP3YBc9JRThMXeq4as9pRL0LzkTjlUS/view?usp=drive_link" },
-  { title: "Acquiring Data", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/1rPy-tamLREVlVPbdtXNTnDPhYd17TdXZ/view?usp=drive_link" },
+  { title: "Acquiring Data", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/1bfDikio6nIn5DFVBupnXrUaPe6sihIQU/view?usp=sharing" },
+  { title: "Angular Framework Development", year: "2026", issuer: "Infosys Springboard", category: "Framework", link: "https://drive.google.com/file/d/1tn95ANOjwpdSwnkNNR-CXj7V9i3jBQip/view?usp=sharing" },
+  { title: "Bootstrap 5 Responsive Design", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1hHIJcEQdoqwp8cWxKSwbBuInipyDOXuj/view?usp=sharing" },
+  { title: "Cloud Computing Fundamentals", year: "2026", issuer: "Springboard", category: "Cloud", link: "https://drive.google.com/file/d/1ABPfW1JAVQcb6RIw5ceR5kjTQdoA0NBL/view?usp=sharing" },
+  { title: "CSS3 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1mc9NgsXb5XWEgjQ0CBbj6BAu-6Xbdv7o/view?usp=sharing" },
+  { title: "Data Processing & Visualization", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/136If1xLliQQIe87YTZ_dssxi9C2qSgv-/view?usp=sharing" },
+  { title: "Data Science for Beginners", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/16jGOe2ZWyMlrUHbEOcXT70zXuALSRCPb/view?usp=sharing" },
+  { title: "Design Thinking", year: "2023", issuer: "NPTEL", category: "Design", link: "https://drive.google.com/file/d/1Fj1c_etoemAXUp4MaUGHvBjZFGuKC7sk/view?usp=sharing" },
+  { title: "Digital 101", year: "2026", issuer: "NASSCOM", category: "Digital", link: "https://drive.google.com/file/d/1obehWibBTZpDAC84gbZDUo1019NzaI9p/view?usp=sharing" },
+  { title: "HTML5 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/17y660_v0itQPun_nOIMrlB5Y-45E6k4l/view?usp=sharing" },
+  { title: "Introduction to IoT", year: "2025", issuer: "Infosys Springboard", category: "IoT", link: "https://drive.google.com/file/d/1z2QvLcAHryEk3N62sMBb6bW_PzThqOXD/view?usp=sharing" },
+  { title: "Java Programming", year: "2024", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1WW-6ImfYJA8gdNK2GsTy3qJAkH1qroAC/view?usp=sharing" },
+  { title: "JavaScript Essentials", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1hS1m-9Hv6bcmUp36hkyQfgfu0UCbTKJN/view?usp=drive_link" },
+  { title: "TypeScript Mastery", year: "2026", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1T-pCcqmdcEQksqgDnCb8oiOdraKvjqZv/view?usp=sharing" },
+  { title: "Machine Learning", year: "2026", issuer: "Infosys Springboard", category: "AI / ML", link: "https://drive.google.com/file/d/1QdkE86u9I5HN7BOJVKngAmTFCFu98iPW/view?usp=sharing" },
+  { title: "SQL Database Development", year: "2026", issuer: "Infosys Springboard", category: "Database", link: "https://drive.google.com/file/d/1IVxTNDQ3IMiOfUAmf35K2e1Jl1lxbz6n/view?usp=sharing" },
+  { title: "GitHub & Version Control", year: "2026", issuer: "GitHub", category: "DevOps", link: "https://drive.google.com/file/d/1sJIE9SkmmAE-MCNlB5ZXdWk1bIo-EH6z/view?usp=sharing" },
 ];
 
-
-
-
+const hackathonCertificates = [
+  { title: "Tata Elxsi Hackathon", year: "2026", issuer: "Tata Elxsi", category: "Hackathon", link: "https://drive.google.com/file/d/1P5yHRflTy2d6Ck8mUOOxX5dSymUnVJij/view?usp=sharing" },
+  { title: "Hackvega Hackathon", year: "2026", issuer: "Hackvega", category: "Hackathon", link: "https://drive.google.com/file/d/1n0rD5W4CQvp8PdMV8b5By8uqcrdPnlug/view?usp=sharing" },
+];
 
 export function AboutSection() {
   return (
@@ -155,13 +160,64 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Hackathon Certificates */}
+          <div>
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-bold">
+                <Trophy className="w-4 h-4 text-amber-400" />
+                <span>Hackathon Certificates</span>
+              </div>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {hackathonCertificates.map((h) => (
+                <a
+                  key={h.title}
+                  href={h.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative cursor-pointer block"
+                >
+                  <div className="absolute -inset-[1px] bg-gradient-to-r from-amber-500/30 via-orange-500/30 to-purple-500/30 rounded-2xl opacity-75 group-hover:opacity-100 transition-all duration-500 blur-[3px]" />
+                  <div className="relative h-full bg-[#0c0c14]/80 backdrop-blur-md border border-amber-500/20 rounded-2xl p-6 transition-all duration-500 group-hover:bg-[#0c0c14] group-hover:-translate-y-1 shadow-2xl">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0 group-hover:bg-amber-500/25 transition-all">
+                        <Trophy className="w-6 h-6 text-amber-400 group-hover:scale-110 transition-all" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20">{h.issuer}</span>
+                          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{h.category}</span>
+                        </div>
+                        <h4 className="text-base font-bold text-white leading-snug group-hover:text-amber-300 transition-colors">{h.title}</h4>
+                      </div>
+                    </div>
+                    <div className="mt-5 flex items-center justify-between pt-4 border-t border-white/5">
+                      <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase tracking-wider">Achievement</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-mono text-amber-400 font-bold">{h.year}</span>
+                        <div className="w-1 h-1 rounded-full bg-amber-500/50" />
+                        <span className="text-[10px] font-bold text-amber-400 flex items-center gap-1 group-hover:underline">
+                          View Certificate <ExternalLink size={12} />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Technical & Course Certifications */}
           <div>
             <div className="flex items-center gap-4 mb-12">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-              <h3 className="text-2xl font-bold text-white tracking-tight px-4">Certifications</h3>
+              <h3 className="text-2xl font-bold text-white tracking-tight px-4">Course & Skill Certifications ({certifications.length})</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((c) => (
                 <a 
@@ -198,6 +254,7 @@ export function AboutSection() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>
