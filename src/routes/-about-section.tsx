@@ -37,28 +37,89 @@ export function AboutSection() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8 py-16 sm:py-32">
-        {/* Heading */}
-        <div className="flex flex-col items-start mb-12 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono tracking-widest uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-            Background
+        {/* Top Section: Photo + Bio Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16 sm:mb-24">
+          {/* Photo Card Column */}
+          <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
+            <div className="relative group max-w-sm sm:max-w-md w-full">
+              {/* Glow Backdrops */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-75 group-hover:opacity-100 transition duration-700 group-hover:duration-300" />
+              <div className="absolute -inset-1 bg-gradient-to-tr from-purple-500 to-cyan-400 rounded-[2.5rem] blur-md opacity-40" />
+
+              {/* Main Card Frame */}
+              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-3 sm:p-4 backdrop-blur-2xl shadow-2xl overflow-hidden">
+                {/* Decorative corner glows */}
+                <div className="absolute top-0 right-0 w-36 h-36 bg-purple-500/15 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-blue-500/15 rounded-full blur-2xl pointer-events-none" />
+
+                {/* Image Container */}
+                <div className="relative w-full aspect-[4/5] rounded-[1.6rem] overflow-hidden border border-white/10 group-hover:border-purple-500/50 transition-colors duration-500 shadow-inner">
+                  <img
+                    src="/images/profile.png"
+                    alt="Logeshwaran V"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Bottom Vignette Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c14] via-transparent to-transparent opacity-75" />
+
+                  {/* Floating Status Pill */}
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#050507]/80 backdrop-blur-md border border-white/15 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[11px] font-mono font-semibold text-zinc-200">Open to Work</span>
+                  </div>
+
+                  {/* Profile Info Overlay Badge */}
+                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#080811]/85 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-white font-extrabold text-lg tracking-tight">Logeshwaran V</h3>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold uppercase tracking-wider">
+                        IT '27
+                      </span>
+                    </div>
+                    <p className="text-xs text-zinc-400 font-medium">Software Developer & Full-Stack Enthusiast</p>
+                    <div className="flex items-center gap-1.5 pt-1 border-t border-white/5 text-[11px] text-zinc-400 font-mono">
+                      <span className="text-purple-400 font-bold">Location:</span> Tamil Nadu, India
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Passionate about <span className="text-gradient-primary">software development.</span>
-          </h2>
-          <div className="mt-8 text-zinc-400 max-w-4xl leading-relaxed text-lg space-y-6">
-            <p>
-              I’m <span className="text-white font-medium">Logeshwaran</span>, an aspiring Software Engineer with strong experience in full-stack development and building scalable web applications. I specialize in developing efficient, user-focused software solutions using modern technologies across the frontend and backend.
-            </p>
-            <p>
-              My experience includes designing and developing end-to-end applications, implementing responsive user interfaces, building RESTful APIs, managing databases, and deploying production-ready projects. I am passionate about solving complex technical problems, writing clean and maintainable code, and continuously improving system performance and user experience.
-            </p>
-            <p>
-              Through hands-on projects and real-world development experience, I have strengthened my problem-solving, debugging, and software engineering skills. I am continuously expanding my knowledge of modern development practices, scalable architecture, and emerging technologies.
-            </p>
-            <p>
-              I am seeking opportunities to contribute my technical skills, collaborate with innovative teams, and grow as a software engineer while building impactful digital products.
-            </p>
+
+          {/* Bio Text Column */}
+          <div className="lg:col-span-7 flex flex-col items-start order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono tracking-widest uppercase mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+              Background &amp; Profile
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-6">
+              Passionate about <span className="text-gradient-primary">software development.</span>
+            </h2>
+
+            <div className="text-zinc-400 leading-relaxed text-base sm:text-lg space-y-5 font-medium">
+              <p>
+                I’m <span className="text-white font-semibold">Logeshwaran</span>, an aspiring Software Engineer with strong experience in full-stack development and building scalable web applications. I specialize in developing efficient, user-focused software solutions using modern technologies across frontend and backend.
+              </p>
+              <p>
+                My experience includes designing and developing end-to-end applications, implementing responsive user interfaces, building RESTful APIs, managing databases, and deploying production-ready projects. I am passionate about solving complex technical problems, writing clean and maintainable code, and continuously improving system performance and user experience.
+              </p>
+              <p>
+                Through hands-on projects and real-world development experience, I have strengthened my problem-solving, debugging, and software engineering skills while continuously expanding my knowledge of modern architecture, scalable systems, and emerging technologies.
+              </p>
+              <p>
+                I am seeking opportunities to contribute my technical skills, collaborate with innovative teams, and grow as a software engineer while building impactful digital products.
+              </p>
+            </div>
+
+            {/* Highlight Badges */}
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {['Full-Stack Development', 'Java & Spring', 'React & Web Apps', 'REST APIs & SQL', 'Problem Solving'].map((tag) => (
+                <span key={tag} className="px-3.5 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold">
+                  ⚡ {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
