@@ -23,7 +23,7 @@ const certifications = [
 ];
 
 const hackathonCertificates = [
-  { title: "Academic Excellence Award", year: "2026", issuer: "Academic Honor", category: "Award", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
+  { title: "Academic Excellence Award", year: "2024", issuer: "Academic Honor", category: "Award", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
   { title: "Tata Elxsi Hackathon", year: "2026", issuer: "Tata Elxsi", category: "Hackathon", link: "https://drive.google.com/file/d/1P5yHRflTy2d6Ck8mUOOxX5dSymUnVJij/view?usp=sharing" },
   { title: "Hackvega Hackathon", year: "2026", issuer: "Hackvega", category: "Hackathon", link: "https://drive.google.com/file/d/1n0rD5W4CQvp8PdMV8b5By8uqcrdPnlug/view?usp=sharing" },
 ];
