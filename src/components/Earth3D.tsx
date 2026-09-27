@@ -6,10 +6,13 @@ function StarCanvas() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     let animId: number;
+    let isVisible = true;
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 60 : 120;
     const stars: { x: number; y: number; r: number; vx: number; vy: number; opacity: number; twinkleSpeed: number; twinklePhase: number }[] = [];
 
     const resize = () => {
@@ -17,72 +20,72 @@ function StarCanvas() {
       canvas.height = canvas.offsetHeight;
     };
     resize();
-    window.addEventListener('resize', resize);
 
-    // Generate stars
-    for (let i = 0; i < 3500; i++) {
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resize, 200);
+    };
+    window.addEventListener('resize', handleResize);
+
+    const handleVisibility = () => {
+      isVisible = !document.hidden;
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    // Generate lightweight stars
+    for (let i = 0; i < starCount; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() < 0.05 ? Math.random() * 2 + 1 : Math.random() * 1.2 + 0.2,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 1.5 + 0.3,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
         opacity: Math.random() * 0.6 + 0.3,
-        twinkleSpeed: Math.random() * 0.04 + 0.01,
+        twinkleSpeed: Math.random() * 0.03 + 0.01,
         twinklePhase: Math.random() * Math.PI * 2,
       });
     }
 
-    let t = 0;
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      t += 0.01;
+    let lastTime = performance.now();
+    const draw = (now: number) => {
+      animId = requestAnimationFrame(draw);
 
-      for (const s of stars) {
+      if (!isVisible) return;
+      if (now - lastTime < 24) return;
+      lastTime = now;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < stars.length; i++) {
+        const s = stars[i];
         s.twinklePhase += s.twinkleSpeed;
         const alpha = s.opacity * (0.5 + 0.5 * Math.sin(s.twinklePhase));
 
-        // Large pinkish stars
-        if (s.r > 1.8) {
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(220,200,255,${alpha * 0.7})`;
-          ctx.fill();
-          // Glow
-          const grd = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 4);
-          grd.addColorStop(0, `rgba(200,170,255,${alpha * 0.3})`);
-          grd.addColorStop(1, 'transparent');
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r * 4, 0, Math.PI * 2);
-          ctx.fillStyle = grd;
-          ctx.fill();
-        } else {
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${alpha})`;
-          ctx.fill();
-        }
+        ctx.fillStyle = `rgba(230,215,255,${alpha.toFixed(2)})`;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
 
-        // Drift
         s.x += s.vx;
         s.y += s.vy;
-        if (s.x < -10) s.x = canvas.width + 10;
-        if (s.x > canvas.width + 10) s.x = -10;
-        if (s.y < -10) s.y = canvas.height + 10;
-        if (s.y > canvas.height + 10) s.y = -10;
+        if (s.x < -5) s.x = canvas.width + 5;
+        if (s.x > canvas.width + 5) s.x = -5;
+        if (s.y < -5) s.y = canvas.height + 5;
+        if (s.y > canvas.height + 5) s.y = -5;
       }
-
-      animId = requestAnimationFrame(draw);
     };
-    draw();
+
+    animId = requestAnimationFrame(draw);
 
     return () => {
       cancelAnimationFrame(animId);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, []);
 
-  return <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />;
+  return <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', transform: 'translateZ(0)' }} />;
 }
 
 export function Earth3D() {

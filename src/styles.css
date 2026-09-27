@@ -97,11 +97,23 @@
   .glass {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
-  .text-primary-foreground {
-    color: #ffffff;
+  /* GPU Scroll Performance Optimizations */
+  article, section, header, canvas {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Disable heavy realtime backdrop blurs on mobile devices to achieve silky smooth 60fps scroll */
+  @media (max-width: 768px) {
+    .glass, [class*="backdrop-blur"] {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: rgba(12, 12, 20, 0.95) !important;
+    }
   }
 
   .grid-pattern {
