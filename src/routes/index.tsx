@@ -54,7 +54,7 @@ function Index() {
                   Let's Connect
                 </a>
                 <a 
-                  href="https://drive.google.com/file/d/1RpPuAqj3Z4CNWKtnVj5XlG5MHLuL2JDb/view?usp=drive_link" 
+                  href="https://drive.google.com/file/d/11XyEZVci9lwqSG3-Z9lI07MmwzJWmF5V/view?usp=sharing" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="px-7 py-3.5 rounded-xl border border-white/10 text-zinc-400 font-semibold hover:text-white hover:border-white/30 transition-all text-sm font-secondary"
@@ -65,7 +65,7 @@ function Index() {
 
               <div className="mt-14 flex flex-wrap gap-x-10 gap-y-6">
                 {[
-                  { val: '8.34', label: 'CGPA' },
+                  { val: '8.25', label: 'CGPA' },
                   { val: '3+', label: 'Projects' },
                   { val: '21+', label: 'Certifications' },
                   { val: '2027', label: 'Graduating' },
