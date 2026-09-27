@@ -16,8 +16,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-[#050507]/90 backdrop-blur-xl border-b border-purple-500/15">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between h-16 px-4 sm:px-6">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative w-8 h-8 rounded-full p-[1.5px] bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 shadow-glow shrink-0 overflow-hidden">
-            <img src="/images/profile.png" alt="Logeshwaran V" className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300" />
+          <div className="relative w-8.5 h-8.5 rounded-full p-[1.5px] bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 shadow-glow shrink-0 overflow-hidden">
+            <img src="/images/profile.png" alt="Logeshwaran V" className="w-full h-full object-cover object-[center_85%] scale-125 rounded-full group-hover:scale-135 transition-transform duration-300" />
           </div>
           <span className="font-semibold text-sm tracking-tight text-white">
             Logeshwaran<span className="text-purple-400"> V.</span>

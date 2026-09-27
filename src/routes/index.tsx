@@ -25,7 +25,9 @@ function Index() {
             {/* Left: Text */}
             <div className="order-1 lg:order-1">
               <div className="inline-flex items-center gap-2.5 mb-6 sm:mb-8 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full glass border-primary-glow max-w-full">
-                <img src="/images/profile.png" alt="Logeshwaran" className="w-5 h-5 rounded-full object-cover ring-1 ring-purple-400/50 shrink-0" />
+                <div className="w-5.5 h-5.5 rounded-full overflow-hidden shrink-0 ring-1 ring-purple-400/50">
+                  <img src="/images/profile.png" alt="Logeshwaran" className="w-full h-full object-cover object-[center_85%] scale-125" />
+                </div>
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                 <span className="text-[11px] sm:text-xs font-medium text-zinc-300 truncate">Open to Internship &amp; Engineering Opportunities</span>
               </div>

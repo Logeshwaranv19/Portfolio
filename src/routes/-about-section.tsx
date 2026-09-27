@@ -38,7 +38,7 @@ export function AboutSection() {
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8 py-16 sm:py-32">
         {/* Top Section: Photo + Bio Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16 sm:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-16 sm:mb-24">
           {/* Photo Card Column */}
           <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
             <div className="relative group max-w-sm sm:max-w-md w-full">
@@ -47,7 +47,7 @@ export function AboutSection() {
               <div className="absolute -inset-1 bg-gradient-to-tr from-purple-500 to-cyan-400 rounded-[2.5rem] blur-md opacity-40" />
 
               {/* Main Card Frame */}
-              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-3.5 sm:p-4 backdrop-blur-2xl shadow-2xl flex flex-col gap-4">
+              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-3.5 sm:p-4 backdrop-blur-2xl shadow-2xl flex flex-col gap-4 overflow-hidden">
                 {/* Decorative corner glows */}
                 <div className="absolute top-0 right-0 w-36 h-36 bg-purple-500/15 rounded-full blur-2xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-36 h-36 bg-blue-500/15 rounded-full blur-2xl pointer-events-none" />
@@ -69,18 +69,22 @@ export function AboutSection() {
                   </div>
                 </div>
 
-                {/* Profile Info Footer (below image to ensure zero face overlap) */}
-                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#080811]/90 border border-white/10 shadow-xl flex flex-col gap-2">
-                  <div className="flex items-center justify-between">
+                {/* Profile Info Footer */}
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#080811]/90 border border-white/10 shadow-xl flex flex-col gap-2.5">
+                  <div className="flex items-center justify-between gap-2">
                     <h3 className="text-white font-extrabold text-xl tracking-tight">Logeshwaran V</h3>
-                    <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold uppercase tracking-wider">
+                    <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold uppercase tracking-wider shrink-0">
                       B.Tech IT
                     </span>
                   </div>
                   <p className="text-xs text-zinc-400 font-medium">Software Developer &amp; Full-Stack Enthusiast</p>
-                  <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[11px] text-zinc-400 font-mono">
-                    <span className="text-purple-400 font-bold">📍 Tamil Nadu, India</span>
-                    <span className="text-zinc-500">Sona College of Tech</span>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pt-2.5 border-t border-white/5 text-[11px] text-zinc-400 font-mono">
+                    <span className="text-purple-400 font-semibold flex items-center gap-1">
+                      <span>📍</span> Tamil Nadu, India
+                    </span>
+                    <span className="text-zinc-300 font-semibold flex items-center gap-1">
+                      <span>🎓</span> Sona College of Technology
+                    </span>
                   </div>
                 </div>
               </div>
