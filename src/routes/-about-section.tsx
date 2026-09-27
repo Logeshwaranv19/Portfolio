@@ -23,7 +23,7 @@ const certifications = [
 ];
 
 const hackathonCertificates = [
-  { title: "Academic Excellence Award", year: "2024", issuer: "Academic Honor", category: "Award", type: "Academic Honor", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
+  { title: "Academic Excellence Award", year: "2024", issuer: "Academic Honor", category: "Academic Honor", type: "Academic Certificate", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
   { title: "Tata Elxsi Hackathon", year: "2026", issuer: "Tata Elxsi", category: "Participation", type: "Participation Certificate", link: "https://drive.google.com/file/d/1P5yHRflTy2d6Ck8mUOOxX5dSymUnVJij/view?usp=sharing" },
   { title: "Hackvega Hackathon", year: "2026", issuer: "Hackvega", category: "Participation", type: "Participation Certificate", link: "https://drive.google.com/file/d/1n0rD5W4CQvp8PdMV8b5By8uqcrdPnlug/view?usp=sharing" },
 ];
@@ -168,7 +168,7 @@ export function AboutSection() {
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
               <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-bold">
                 <Trophy className="w-4 h-4 text-amber-400" />
-                <span>Honors & Hackathon Awards</span>
+                <span>Honors & Hackathon Certificates</span>
               </div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
             </div>
