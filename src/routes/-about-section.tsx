@@ -23,9 +23,9 @@ const certifications = [
 ];
 
 const hackathonCertificates = [
-  { title: "Academic Excellence Award", year: "2024", issuer: "Academic Honor", category: "Award", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
-  { title: "Tata Elxsi Hackathon", year: "2026", issuer: "Tata Elxsi", category: "Hackathon", link: "https://drive.google.com/file/d/1P5yHRflTy2d6Ck8mUOOxX5dSymUnVJij/view?usp=sharing" },
-  { title: "Hackvega Hackathon", year: "2026", issuer: "Hackvega", category: "Hackathon", link: "https://drive.google.com/file/d/1n0rD5W4CQvp8PdMV8b5By8uqcrdPnlug/view?usp=sharing" },
+  { title: "Academic Excellence Award", year: "2024", issuer: "Academic Honor", category: "Award", type: "Academic Honor", link: "https://drive.google.com/file/d/1w-VJTD3RSiZ5q76IG_ku8PAO3S1SZTpY/view?usp=sharing" },
+  { title: "Tata Elxsi Hackathon", year: "2026", issuer: "Tata Elxsi", category: "Participation", type: "Participation Certificate", link: "https://drive.google.com/file/d/1P5yHRflTy2d6Ck8mUOOxX5dSymUnVJij/view?usp=sharing" },
+  { title: "Hackvega Hackathon", year: "2026", issuer: "Hackvega", category: "Participation", type: "Participation Certificate", link: "https://drive.google.com/file/d/1n0rD5W4CQvp8PdMV8b5By8uqcrdPnlug/view?usp=sharing" },
 ];
 
 export function AboutSection() {
@@ -197,7 +197,7 @@ export function AboutSection() {
                       </div>
                     </div>
                     <div className="mt-5 flex items-center justify-between pt-4 border-t border-white/5">
-                      <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase tracking-wider">Achievement</span>
+                      <span className="text-[10px] font-mono text-zinc-500 font-bold uppercase tracking-wider">{h.type || h.category}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-[11px] font-mono text-amber-400 font-bold">{h.year}</span>
                         <div className="w-1 h-1 rounded-full bg-amber-500/50" />
