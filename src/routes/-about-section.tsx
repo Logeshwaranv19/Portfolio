@@ -47,7 +47,7 @@ export function AboutSection() {
               <div className="absolute -inset-1 bg-gradient-to-tr from-purple-500 to-cyan-400 rounded-[2.5rem] blur-md opacity-40" />
 
               {/* Main Card Frame */}
-              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-3 sm:p-4 backdrop-blur-2xl shadow-2xl overflow-hidden">
+              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-3.5 sm:p-4 backdrop-blur-2xl shadow-2xl flex flex-col gap-4">
                 {/* Decorative corner glows */}
                 <div className="absolute top-0 right-0 w-36 h-36 bg-purple-500/15 rounded-full blur-2xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-36 h-36 bg-blue-500/15 rounded-full blur-2xl pointer-events-none" />
@@ -57,29 +57,30 @@ export function AboutSection() {
                   <img
                     src="/images/profile.png"
                     alt="Logeshwaran V"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-[center_90%] group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  {/* Bottom Vignette Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c14] via-transparent to-transparent opacity-75" />
+                  {/* Subtle Vignette Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c14]/60 via-transparent to-black/20 pointer-events-none" />
 
                   {/* Floating Status Pill */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#050507]/80 backdrop-blur-md border border-white/15 shadow-lg">
+                  <div className="absolute top-3.5 left-3.5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#050507]/80 backdrop-blur-md border border-white/15 shadow-lg">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     <span className="text-[11px] font-mono font-semibold text-zinc-200">Open to Work</span>
                   </div>
+                </div>
 
-                  {/* Profile Info Overlay Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#080811]/85 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-white font-extrabold text-lg tracking-tight">Logeshwaran V</h3>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold uppercase tracking-wider">
-                        IT '27
-                      </span>
-                    </div>
-                    <p className="text-xs text-zinc-400 font-medium">Software Developer & Full-Stack Enthusiast</p>
-                    <div className="flex items-center gap-1.5 pt-1 border-t border-white/5 text-[11px] text-zinc-400 font-mono">
-                      <span className="text-purple-400 font-bold">Location:</span> Tamil Nadu, India
-                    </div>
+                {/* Profile Info Footer (below image to ensure zero face overlap) */}
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#080811]/90 border border-white/10 shadow-xl flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-white font-extrabold text-xl tracking-tight">Logeshwaran V</h3>
+                    <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold uppercase tracking-wider">
+                      B.Tech IT
+                    </span>
+                  </div>
+                  <p className="text-xs text-zinc-400 font-medium">Software Developer &amp; Full-Stack Enthusiast</p>
+                  <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[11px] text-zinc-400 font-mono">
+                    <span className="text-purple-400 font-bold">📍 Tamil Nadu, India</span>
+                    <span className="text-zinc-500">Sona College of Tech</span>
                   </div>
                 </div>
               </div>
