@@ -50,15 +50,15 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="w-full relative" style={{ background: '#050507' }}>
 
-      <div className="relative mx-auto max-w-[1400px] px-6 py-24">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8 py-16 sm:py-24">
 
         {/* Heading */}
-        <div className="flex items-center gap-4 mb-12">
+        <div className="flex items-center gap-4 mb-8 sm:mb-12">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-          <h3 className="text-2xl font-bold text-white px-4">Projects</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white px-4">Projects</h3>
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mt-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mt-4 sm:mt-6">
           Things I've <span className="text-gradient-primary">built.</span>
         </h2>
 

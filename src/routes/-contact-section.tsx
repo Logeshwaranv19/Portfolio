@@ -89,17 +89,17 @@ export function ContactSection() {
 
       <div className="absolute inset-0 bg-noise opacity-[0.02] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1100px] px-6 py-32">
+      <div className="relative mx-auto max-w-[1100px] px-4 sm:px-6 py-16 sm:py-32">
 
         {/* Header */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-12">
+        <div className="mb-12 sm:mb-20">
+          <div className="flex items-center gap-4 mb-8 sm:mb-12">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
-            <h3 className="text-2xl font-bold text-white px-4">Get In Touch</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white px-4">Get In Touch</h3>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
           </div>
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-6">Let's build something <span className="text-gradient-primary">legendary</span>.</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter mb-4 sm:mb-6">Let's build something <span className="text-gradient-primary">legendary</span>.</h2>
           </div>
           <p className="mt-6 text-zinc-500 text-base max-w-lg mx-auto leading-relaxed text-center">
             Open to internships, collaborations, and exciting ideas. Drop me a message or reach out on any platform.

@@ -19,19 +19,19 @@ function Index() {
         <StarCanvas />
         <div className="absolute inset-0 dot-pattern opacity-60 pointer-events-none" />
 
-        <div className="relative mx-auto max-w-[1400px] px-8 py-24 md:py-32" style={{ minHeight: '88vh', display: 'flex', alignItems: 'center' }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8 py-12 sm:py-24 md:py-32" style={{ minHeight: '88vh', display: 'flex', alignItems: 'center' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
 
             {/* Left: Text */}
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full glass border-primary-glow">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs font-medium text-zinc-300">Open to Internship &amp; Engineering Opportunities</span>
+            <div className="order-1 lg:order-1">
+              <div className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full glass border-primary-glow max-w-full">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="text-[11px] sm:text-xs font-medium text-zinc-300 truncate">Open to Internship &amp; Engineering Opportunities</span>
               </div>
 
-              <h1 className="text-6xl md:text-7xl font-extrabold tracking-tighter leading-[0.95]">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-[0.98]">
                 <span className="text-white block">Hi, I'm</span>
-                <span className="text-gradient-primary block mt-1 pb-4">Logeshwaran.</span>
+                <span className="text-gradient-primary block mt-1 pb-2 sm:pb-4">Logeshwaran.</span>
               </h1>
 
               <div className="mt-8 flex flex-col gap-5">
@@ -46,24 +46,24 @@ function Index() {
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <a href="#projects" className="px-7 py-3.5 rounded-xl bg-gradient-primary text-white font-semibold shadow-glow hover:opacity-90 hover:-translate-y-0.5 transition-all text-sm font-secondary">
+              <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4">
+                <a href="#projects" className="flex-1 sm:flex-none justify-center text-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-primary text-white font-semibold shadow-glow hover:opacity-90 transition-all text-sm font-secondary">
                   View Projects →
                 </a>
-                <a href="#contact" className="px-7 py-3.5 rounded-xl glass border-primary-glow text-white font-semibold hover:bg-white/10 transition-all text-sm font-secondary">
+                <a href="#contact" className="flex-1 sm:flex-none justify-center text-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl glass border-primary-glow text-white font-semibold hover:bg-white/10 transition-all text-sm font-secondary">
                   Let's Connect
                 </a>
                 <a 
                   href="https://drive.google.com/file/d/11XyEZVci9lwqSG3-Z9lI07MmwzJWmF5V/view?usp=sharing" 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="px-7 py-3.5 rounded-xl border border-white/10 text-zinc-400 font-semibold hover:text-white hover:border-white/30 transition-all text-sm font-secondary"
+                  className="w-full sm:w-auto text-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl border border-white/10 text-zinc-400 font-semibold hover:text-white hover:border-white/30 transition-all text-sm font-secondary"
                 >
                   Resume
                 </a>
               </div>
 
-              <div className="mt-14 flex flex-wrap gap-x-10 gap-y-6">
+              <div className="mt-10 sm:mt-14 grid grid-cols-2 sm:flex sm:flex-wrap gap-6 sm:gap-x-10 sm:gap-y-6 border-t border-white/5 pt-6 sm:border-0 sm:pt-0">
                 {[
                   { val: '8.25', label: 'CGPA' },
                   { val: '3+', label: 'Projects' },
@@ -71,15 +71,15 @@ function Index() {
                   { val: '2027', label: 'Graduating' },
                 ].map(({ val, label }) => (
                   <div key={label}>
-                    <div className="text-3xl font-bold text-white">{val}</div>
-                    <div className="text-xs text-zinc-500 mt-1 uppercase tracking-widest font-mono">{label}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white">{val}</div>
+                    <div className="text-[10px] sm:text-xs text-zinc-500 mt-1 uppercase tracking-widest font-mono">{label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right: 3D Computer */}
-            <div className="order-1 lg:order-2 flex items-center justify-center relative" style={{ minHeight: 'clamp(300px, 40vh, 550px)' }}>
+            <div className="order-2 lg:order-2 flex items-center justify-center relative my-4 lg:my-0" style={{ minHeight: 'clamp(240px, 35vh, 500px)' }}>
               <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full" />
               <Computer3D />
             </div>

@@ -36,14 +36,14 @@ export function AboutSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[600px] bg-purple-600/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1400px] px-8 py-32">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8 py-16 sm:py-32">
         {/* Heading */}
-        <div className="flex flex-col items-start mb-20">
+        <div className="flex flex-col items-start mb-12 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono tracking-widest uppercase mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
             Background
           </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
             Passionate about <span className="text-gradient-primary">software development.</span>
           </h2>
           <div className="mt-8 text-zinc-400 max-w-4xl leading-relaxed text-lg space-y-6">

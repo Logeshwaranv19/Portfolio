@@ -33,20 +33,20 @@ export function ExperienceSection() {
   ];
 
   return (
-    <section id="experience" className="w-full relative overflow-hidden bg-[#050507] py-32 border-t border-white/5">
+    <section id="experience" className="w-full relative overflow-hidden bg-[#050507] py-16 sm:py-32 border-t border-white/5">
       {/* Background Gradients */}
       <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
       <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1400px] px-8">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-start mb-16">
+        <div className="flex flex-col items-start mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono tracking-widest uppercase mb-6">
             <Briefcase className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
             <span>Work Experience</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
             Internship <span className="text-gradient-primary">Experience</span>
           </h2>
           <p className="mt-4 text-zinc-400 max-w-2xl text-base font-medium">
@@ -58,7 +58,7 @@ export function ExperienceSection() {
         <div className="relative group">
           <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-600/30 via-blue-600/30 to-purple-600/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-all duration-700 blur-[3px]" />
           
-          <div className="relative bg-[#0c0c14]/90 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
+          <div className="relative bg-[#0c0c14]/90 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl overflow-hidden">
             
             {/* Company & Role Header */}
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-white/10">
