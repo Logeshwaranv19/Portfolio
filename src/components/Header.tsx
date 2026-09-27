@@ -9,7 +9,7 @@ export function Header() {
           <span className="font-semibold text-sm tracking-tight text-white">Logeshwaran<span className="text-purple-400"> V.</span></span>
         </Link>
         <nav className="flex items-center gap-1">
-          {[['#about','About'],['#projects','Projects'],['#contact','Contact']].map(([href, label]) => (
+          {[['#about','About'],['#experience','Experience'],['#projects','Projects'],['#contact','Contact']].map(([href, label]) => (
             <a key={href} href={href} className="text-sm text-zinc-400 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all">
               {label}
             </a>

@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { AboutSection } from './-about-section';
+import { ExperienceSection } from './-experience-section';
 import { ProjectsSection } from './-projects-section';
 import { ContactSection } from './-contact-section';
 import { StarCanvas } from '../components/Earth3D';
@@ -90,6 +91,7 @@ function Index() {
       </section>
 
       <AboutSection />
+      <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
     </div>
