@@ -2,24 +2,24 @@ import { SkillGems } from '../components/SkillGems';
 import { Award, GraduationCap, Trophy, ExternalLink } from 'lucide-react';
 
 const certifications = [
-  { title: "Acquiring Data", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/1bfDikio6nIn5DFVBupnXrUaPe6sihIQU/view?usp=sharing" },
+  { title: "Acquiring Data", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/1bfDikio6nIn5DFVBupnXrUaPe6sihIQU/view?usp=sharing" },
   { title: "Angular Framework Development", year: "2026", issuer: "Infosys Springboard", category: "Framework", link: "https://drive.google.com/file/d/1tn95ANOjwpdSwnkNNR-CXj7V9i3jBQip/view?usp=sharing" },
   { title: "Bootstrap 5 Responsive Design", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1hHIJcEQdoqwp8cWxKSwbBuInipyDOXuj/view?usp=sharing" },
-  { title: "Cloud Computing Fundamentals", year: "2026", issuer: "Springboard", category: "Cloud", link: "https://drive.google.com/file/d/1ABPfW1JAVQcb6RIw5ceR5kjTQdoA0NBL/view?usp=sharing" },
+  { title: "Cloud Computing Fundamentals", year: "2026", issuer: "NASSCOM", category: "Cloud", link: "https://drive.google.com/file/d/1ABPfW1JAVQcb6RIw5ceR5kjTQdoA0NBL/view?usp=sharing" },
   { title: "CSS3 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1mc9NgsXb5XWEgjQ0CBbj6BAu-6Xbdv7o/view?usp=sharing" },
   { title: "Data Processing & Visualization", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/136If1xLliQQIe87YTZ_dssxi9C2qSgv-/view?usp=sharing" },
-  { title: "Data Science for Beginners", year: "2026", issuer: "Infosys Springboard", category: "Data Science", link: "https://drive.google.com/file/d/16jGOe2ZWyMlrUHbEOcXT70zXuALSRCPb/view?usp=sharing" },
+  { title: "Data Science for Beginners", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/16jGOe2ZWyMlrUHbEOcXT70zXuALSRCPb/view?usp=sharing" },
   { title: "Design Thinking", year: "2023", issuer: "NPTEL", category: "Design", link: "https://drive.google.com/file/d/1Fj1c_etoemAXUp4MaUGHvBjZFGuKC7sk/view?usp=sharing" },
   { title: "Digital 101", year: "2026", issuer: "NASSCOM", category: "Digital", link: "https://drive.google.com/file/d/1obehWibBTZpDAC84gbZDUo1019NzaI9p/view?usp=sharing" },
-  { title: "Foundational Course on Applied ML & AI", year: "2026", issuer: "NASSCOM", category: "AI / ML", link: "https://drive.google.com/file/d/1zU_-jp1231TBenxdwqTOBUvRYgjAzYRL/view?usp=sharing" },
+  { title: "Foundational Course on Applied ML & AI", year: "2026", issuer: "CII", category: "AI / ML", link: "https://drive.google.com/file/d/1zU_-jp1231TBenxdwqTOBUvRYgjAzYRL/view?usp=sharing" },
   { title: "HTML5 Fundamentals", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/17y660_v0itQPun_nOIMrlB5Y-45E6k4l/view?usp=sharing" },
-  { title: "Introduction to IoT", year: "2025", issuer: "Infosys Springboard", category: "IoT", link: "https://drive.google.com/file/d/1z2QvLcAHryEk3N62sMBb6bW_PzThqOXD/view?usp=sharing" },
-  { title: "Java Programming", year: "2024", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1WW-6ImfYJA8gdNK2GsTy3qJAkH1qroAC/view?usp=sharing" },
+  { title: "Introduction to IoT", year: "2025", issuer: "NPTEL", category: "IoT", link: "https://drive.google.com/file/d/1z2QvLcAHryEk3N62sMBb6bW_PzThqOXD/view?usp=sharing" },
+  { title: "Java Programming", year: "2024", issuer: "NPTEL", category: "Programming", link: "https://drive.google.com/file/d/1WW-6ImfYJA8gdNK2GsTy3qJAkH1qroAC/view?usp=sharing" },
   { title: "JavaScript Essentials", year: "2026", issuer: "Infosys Springboard", category: "Frontend", link: "https://drive.google.com/file/d/1hS1m-9Hv6bcmUp36hkyQfgfu0UCbTKJN/view?usp=drive_link" },
   { title: "TypeScript Mastery", year: "2026", issuer: "Infosys Springboard", category: "Programming", link: "https://drive.google.com/file/d/1T-pCcqmdcEQksqgDnCb8oiOdraKvjqZv/view?usp=sharing" },
-  { title: "Machine Learning", year: "2026", issuer: "Infosys Springboard", category: "AI / ML", link: "https://drive.google.com/file/d/1QdkE86u9I5HN7BOJVKngAmTFCFu98iPW/view?usp=sharing" },
-  { title: "SQL Database Development", year: "2026", issuer: "Infosys Springboard", category: "Database", link: "https://drive.google.com/file/d/1IVxTNDQ3IMiOfUAmf35K2e1Jl1lxbz6n/view?usp=sharing" },
-  { title: "GitHub & Version Control", year: "2026", issuer: "GitHub", category: "DevOps", link: "https://drive.google.com/file/d/1sJIE9SkmmAE-MCNlB5ZXdWk1bIo-EH6z/view?usp=sharing" },
+  { title: "Machine Learning", year: "2026", issuer: "NASSCOM", category: "AI / ML", link: "https://drive.google.com/file/d/1QdkE86u9I5HN7BOJVKngAmTFCFu98iPW/view?usp=sharing" },
+  { title: "SQL Database Development", year: "2026", issuer: "CodeChef", category: "Database", link: "https://drive.google.com/file/d/1IVxTNDQ3IMiOfUAmf35K2e1Jl1lxbz6n/view?usp=sharing" },
+  { title: "GitHub & Version Control", year: "2026", issuer: "CodeChef", category: "DevOps", link: "https://drive.google.com/file/d/1sJIE9SkmmAE-MCNlB5ZXdWk1bIo-EH6z/view?usp=sharing" },
 ];
 
 const hackathonCertificates = [
