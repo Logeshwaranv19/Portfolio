@@ -8,14 +8,12 @@ function getGmailCredentials() {
   let user = process.env.GMAIL_USER || '';
   let pass = process.env.GMAIL_APP_PASS || process.env.VITE_GMAIL_APP_PASS || '';
 
-  // If not found in process.env, read directly from .env file at request time
   if (!pass || !user) {
     try {
       const candidatePaths = [
         path.resolve(process.cwd(), '.env'),
         path.resolve(process.cwd(), '../.env'),
         path.resolve(process.cwd(), '../../.env'),
-        'd:\\New folder (11)\\Portfolio\\.env'
       ];
 
       for (const envPath of candidatePaths) {
@@ -52,52 +50,62 @@ function getGmailCredentials() {
 export const sendEmail = createServerFn({ method: 'POST' })
   .inputValidator((data: { name: string; email: string; message: string }) => data)
   .handler(async ({ data }) => {
-    const { user, pass } = getGmailCredentials();
+    // 1. First try EmailJS REST API
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Origin': 'http://localhost:3000',
+        },
+        body: JSON.stringify({
+          service_id: 'service_hveptng',
+          template_id: 'template_fleygfc',
+          user_id: 'dolJchDKVTn_oqmkB',
+          accessToken: 'mrS6ir80AMbXYCvjdQvkR',
+          template_params: {
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            from_name: data.name,
+            from_email: data.email,
+            reply_to: data.email,
+          },
+        }),
+      });
 
-    if (!pass) {
-      return {
-        success: false,
-        error: 'Missing Gmail App Password. Please check GMAIL_APP_PASS in your .env file.',
-      };
+      const text = await response.text();
+      if (response.ok || text === 'OK') {
+        return { success: true };
+      }
+    } catch (e) {
+      // Fallback below
     }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user,
-        pass,
-      },
-    });
-
-    const mailOptions = {
-      from: user,
-      to: user,
-      subject: `Portfolio Contact: ${data.name}`,
-      text: `
-        You have a new message from your portfolio contact form:
-        
-        Name: ${data.name}
-        Email: ${data.email}
-        Message: ${data.message}
-      `,
-      replyTo: data.email
-    };
-
+    // 2. Direct Nodemailer fallback
     try {
-      await transporter.sendMail(mailOptions);
+      const { user, pass } = getGmailCredentials();
+      if (!pass) {
+        return { success: false, error: 'Failed to send email via EmailJS or Nodemailer' };
+      }
+
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: { user, pass },
+      });
+
+      await transporter.sendMail({
+        from: user,
+        to: user,
+        subject: `Portfolio Contact: ${data.name}`,
+        text: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`,
+        replyTo: data.email,
+      });
+
       return { success: true };
     } catch (error: any) {
       console.error('Error sending email:', error);
-      let userFriendlyError = 'Failed to send message. Please check server mail configuration.';
-      if (error?.message?.includes('535') || error?.message?.includes('BadCredentials')) {
-        userFriendlyError = 'Invalid Gmail App Password. Please update your 16-character App Password in the .env file.';
-      } else if (error?.message) {
-        userFriendlyError = error.message;
-      }
-      return { success: false, error: userFriendlyError };
+      return { success: false, error: error?.message || 'Failed to send message.' };
     }
   });
-
-
-
 

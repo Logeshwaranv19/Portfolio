@@ -12,6 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@rsbuild/core": "^2.0.1",
     "@tailwindcss/vite": "^4.2.4",
     "@tanstack/react-devtools": "latest",

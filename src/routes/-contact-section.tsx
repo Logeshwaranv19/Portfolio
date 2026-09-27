@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { sendEmail } from '../server/contact';
 import { Mail, Phone, Github, Linkedin, Send, ArrowUpRight } from 'lucide-react';
-import { StarCanvas } from '../components/Earth3D';
 
 const channels = [
   { label: "Email", value: "logeshwaranv19@gmail.com", href: "mailto:logeshwaranv19@gmail.com", icon: <Mail size={18} /> },
@@ -18,22 +18,47 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    const formData = new FormData(e.currentTarget);
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
     const data = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
       message: formData.get('message') as string,
     };
+
+    try {
+      const res = await emailjs.send(
+        'service_hveptng',
+        'template_fleygfc',
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          from_name: data.name,
+          from_email: data.email,
+          reply_to: data.email,
+        },
+        'dolJchDKVTn_oqmkB'
+      );
+      if (res.status === 200) {
+        setSubmitStatus({ type: 'success', msg: "Message sent! I'll get back to you soon." });
+        formElement.reset();
+        return;
+      }
+    } catch {
+      // Fallback to server function if client-side send fails
+    }
+
     try {
       const res = await sendEmail({ data });
       if (res.success) {
         setSubmitStatus({ type: 'success', msg: "Message sent! I'll get back to you soon." });
-        (e.target as HTMLFormElement).reset();
+        formElement.reset();
       } else {
         setSubmitStatus({ type: 'error', msg: res.error || 'Failed to send message.' });
       }
-    } catch {
-      setSubmitStatus({ type: 'error', msg: 'Something went wrong. Please try again.' });
+    } catch (err: any) {
+      setSubmitStatus({ type: 'error', msg: err?.message || 'Something went wrong. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }

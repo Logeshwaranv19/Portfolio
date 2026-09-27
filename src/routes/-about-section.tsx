@@ -1,5 +1,5 @@
 import { SkillGems } from '../components/SkillGems';
-import { Award, Calendar, CheckCircle2, GraduationCap } from 'lucide-react';
+import { Award, GraduationCap } from 'lucide-react';
 
 const certifications = [
   { title: "Design Thinking", year: "2023", issuer: "NPTEL", category: "Design", link: "https://drive.google.com/file/d/1VxWeAbOsl92Hiy3UywERosuoXnTw9sf8/view?usp=drive_link" },
