@@ -1,5 +1,5 @@
 import { SkillGems } from '../components/SkillGems';
-import { Award, GraduationCap, Trophy, ExternalLink } from 'lucide-react';
+import { Award, GraduationCap, Trophy, ExternalLink, Terminal } from 'lucide-react';
 
 const certifications = [
   { title: "Acquiring Data", year: "2026", issuer: "NASSCOM", category: "Data Science", link: "https://drive.google.com/file/d/1bfDikio6nIn5DFVBupnXrUaPe6sihIQU/view?usp=sharing" },
@@ -39,7 +39,7 @@ export function AboutSection() {
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-8 py-16 sm:py-32">
         {/* Top Section: Photo + Bio Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-16 sm:mb-24">
-          {/* Photo Card Column */}
+          {/* Profile Card Column (Photo Removed) */}
           <div className="lg:col-span-5 flex justify-center w-full">
             <div className="relative group max-w-sm sm:max-w-md w-full">
               {/* Glow Backdrops */}
@@ -47,30 +47,47 @@ export function AboutSection() {
               <div className="absolute -inset-1 bg-gradient-to-tr from-purple-500 to-cyan-400 rounded-[2.5rem] blur-md opacity-40" />
 
               {/* Main Card Frame */}
-              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-3.5 sm:p-4 backdrop-blur-2xl shadow-2xl flex flex-col gap-4 overflow-hidden">
+              <div className="relative bg-[#0c0c14]/90 border border-white/10 rounded-[2.2rem] p-5 sm:p-6 backdrop-blur-2xl shadow-2xl flex flex-col gap-5 overflow-hidden">
                 {/* Decorative corner glows */}
                 <div className="absolute top-0 right-0 w-36 h-36 bg-purple-500/15 rounded-full blur-2xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-36 h-36 bg-blue-500/15 rounded-full blur-2xl pointer-events-none" />
 
-                {/* Image Container */}
-                <div className="relative w-full aspect-[4/5] rounded-[1.6rem] overflow-hidden border border-white/10 group-hover:border-purple-500/50 transition-colors duration-500 shadow-inner">
-                  <img
-                    src="/images/profile.png"
-                    alt="Logeshwaran V"
-                    className="w-full h-full object-cover object-[center_90%] group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  {/* Subtle Vignette Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c14]/60 via-transparent to-black/20 pointer-events-none" />
+                {/* Card Top: Terminal Icon + Status Pill */}
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-inner">
+                      <Terminal className="w-5 h-5" />
+                    </div>
+                    <span className="font-mono text-xs text-zinc-400 font-semibold tracking-wider uppercase">Profile</span>
+                  </div>
 
-                  {/* Floating Status Pill */}
-                  <div className="absolute top-3.5 left-3.5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#050507]/80 backdrop-blur-md border border-white/15 shadow-lg">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 shadow-sm">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[11px] font-mono font-semibold text-zinc-200">Open to Work</span>
+                    <span className="text-xs font-mono font-semibold text-emerald-300">Open to Work</span>
                   </div>
                 </div>
 
+                {/* Terminal / Code Snippet */}
+                <div className="relative rounded-2xl bg-black/70 border border-white/10 p-4 font-mono text-xs leading-relaxed text-zinc-300 shadow-inner space-y-1.5 overflow-hidden">
+                  <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500/70" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
+                    </div>
+                    <span className="text-[10px] text-zinc-500">engineer.json</span>
+                  </div>
+                  <div className="text-zinc-500">// Engineering scalable web solutions</div>
+                  <div><span className="text-purple-400">const</span> developer = &#123;</div>
+                  <div className="pl-3 text-zinc-400">name: <span className="text-emerald-400">"Logeshwaran V"</span>,</div>
+                  <div className="pl-3 text-zinc-400">role: <span className="text-purple-300">"Software Developer"</span>,</div>
+                  <div className="pl-3 text-zinc-400">stack: <span className="text-blue-400">["Java", "Full-Stack", "DSA"]</span>,</div>
+                  <div className="pl-3 text-zinc-400">status: <span className="text-emerald-400">"Open to Opportunities"</span></div>
+                  <div>&#125;;</div>
+                </div>
+
                 {/* Profile Info Footer */}
-                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#080811]/90 border border-white/10 shadow-xl flex flex-col gap-2.5">
+                <div className="p-4 rounded-2xl bg-[#080811]/90 border border-white/10 shadow-xl flex flex-col gap-2.5">
                   <div className="flex items-center justify-between gap-2">
                     <h3 className="text-white font-extrabold text-xl tracking-tight">Logeshwaran V</h3>
                     <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold uppercase tracking-wider shrink-0">
